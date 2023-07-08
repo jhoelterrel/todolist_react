@@ -24,7 +24,6 @@ todoList.sync()
 app.use(Express.json());
 app.use(cors());
 
-// * Crear TodoList
 app.post('/todos',async (req,res) => {
     try {
         const newTodo = req.body;
@@ -34,8 +33,6 @@ app.post('/todos',async (req,res) => {
         res.status(400).json(error);
     }
 })
-
-// * Traer  todas los TodoList
 
 app.get('/todos', async (req ,res) => {
     try {
@@ -50,8 +47,6 @@ app.get('/todos', async (req ,res) => {
     }
 })
 
-// * Encontrar una Todolist por su  ID
-
 
 app.get('/todos/:id', async (req, res) => {
     try {
@@ -63,7 +58,6 @@ app.get('/todos/:id', async (req, res) => {
     }
 })
 
-//! ***** UPDATE ******
 
 app.put('/todos/:id', async (req, res) => {
     try {
@@ -77,8 +71,6 @@ app.put('/todos/:id', async (req, res) => {
         res.status(201).send();
     }
 });
-
-// ! ***** DELETE *****
 
 app.delete('/todos/:id',  async (req, res) => {
     try {

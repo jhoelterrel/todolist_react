@@ -9,9 +9,8 @@ const todoList = new Sequelize({
     port : process.env.DB_PORT,
     username : process.env.DB_USERNAME,
     password: process.env.DB_PASSWORD,
-    dialect : 'postgres'
-    // ,
-    // dialectOptions: {ssl: { require: true, rejectUnauthorized: false }}
+    dialect : 'postgres',
+    dialectOptions: {ssl: { require: true, rejectUnauthorized: false }}
 })
 
 module.exports = todoList;
